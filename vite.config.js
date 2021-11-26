@@ -38,13 +38,16 @@ const css = {
   //   }
   // }
 }
-
+const build ={
+  outDir:  'docs', // 打包输出目录
+}
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve,
   server,
   css,
+  build,
   plugins: [vue()]
 })
 
-// 
+//
