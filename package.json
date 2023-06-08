@@ -1,5 +1,5 @@
 {
-  "name": "vite-model",
+  "name": "spark-reader",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

@@ -2,9 +2,9 @@
  * @Author: tanshaobo
  * @Date: 2023-03-30 14:53:06
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-03-31 16:37:49
+ * @LastEditTime: 2023-06-08 15:36:26
  * @Description: file content
- * @FilePath: \vite-model\src\router\routes.js
+ * @FilePath: \spark-reader\src\router\routes.js
  */
 // 登录
 const home = {
