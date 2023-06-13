@@ -1,3 +1,11 @@
+/*
+ * @Author: tanshaobo
+ * @Date: 2023-06-08 15:34:10
+ * @LastEditors: tanshaobo
+ * @LastEditTime: 2023-06-08 16:17:39
+ * @Description: eslint配置
+ * @FilePath: \spark-reader\.eslintrc.js
+ */
 module.exports = {
   globals: {
     defineEmits: true,
@@ -70,6 +78,7 @@ module.exports = {
       }
     ],
     'vue/script-setup-uses-vars': 0,
-    eqeqeq: 0 // 允许使用 == !=
+    eqeqeq: 0, // 允许使用 == !=
+    'vue/multi-word-component-names': [0]
   }
 }
