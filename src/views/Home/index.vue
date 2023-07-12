@@ -2,8 +2,8 @@
  * @Author: tanshaobo
  * @Date: 2023-06-08 15:34:10
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-06-17 11:28:53
- * @Description: 首页入口
+ * @LastEditTime: 2023-07-12 09:28:03
+ * @Description: 项目入口部分 布局为左右布局
  * @FilePath: \spark-reader\src\views\Home\Index.vue
 -->
 <template>

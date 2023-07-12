@@ -1,3 +1,11 @@
+<!--
+ * @Author: tanshaobo
+ * @Date: 2023-06-17 10:47:00
+ * @LastEditors: tanshaobo
+ * @LastEditTime: 2023-06-17 14:59:41
+ * @Description: file content
+ * @FilePath: \spark-reader\src\components\layout\Row\index.vue
+-->
 <template>
   <div v-for="(item, index) in values" :key="item.id">
     <div
@@ -9,7 +17,7 @@
         {{ label[index] }}
       </span>
       <span class="content">
-        {{ index != 'stable' && index != 'linear' ? item : item == true ? '是' : '否' }}
+        {{ item }}
       </span>
     </div>
   </div>
@@ -17,7 +25,6 @@
 
 <script setup>
 import { reactive, toRefs } from 'vue'
-import deepCopyObject from '@/utils/deepCopyObject'
 
 const props = defineProps({
   label: {

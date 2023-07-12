@@ -1,3 +1,11 @@
+<!--
+ * @Author: tanshaobo
+ * @Date: 2023-06-17 10:47:00
+ * @LastEditors: tanshaobo
+ * @LastEditTime: 2023-07-12 09:23:48
+ * @Description:
+ * @FilePath: \spark-reader\src\components\layout\Grid\index.vue
+-->
 <template>
   <section class="container" ref="box">
     <div class="card-box" v-if="showType == 'card'">
