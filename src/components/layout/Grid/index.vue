@@ -2,13 +2,18 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 10:47:00
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-07-12 09:23:48
- * @Description:
+ * @LastEditTime: 2023-07-13 17:15:59
+ * @Description: 单元格
+  本文件是宫格式布局文件，
+  1，按设定的格子大小，每行固定n个格子。
+  2，格子之间采用flex布局，默认两端对齐。
+  3，窗口大小发生变化时，若窗口宽度不为格子宽度的倍数，则本行格子数向下取整
+  4，最后一行的格子数不为倍数时，自动补充为倍数，设置remain属性为ture，代表当前格子为补充格，无需渲染内部
  * @FilePath: \spark-reader\src\components\layout\Grid\index.vue
 -->
 <template>
   <section class="container" ref="box">
-    <div class="card-box" v-if="showType == 'card'">
+    <div class="card-box" v-if="showType === 'card'">
       <el-row v-for="(item, index) in showList" :key="index">
         <div class="column-item" v-for="(i, j) in item" :key="j">
           <el-card v-if="!i.remain">
@@ -21,7 +26,7 @@
         </div>
       </el-row>
     </div>
-    <div class="card-box" v-if="showType == 'table'"></div>
+    <div class="card-box" v-if="showType === 'table'"></div>
   </section>
 </template>
 <script setup>
