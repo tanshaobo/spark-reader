@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2022-02-09 13:13:51
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-16 11:43:36
+ * @LastEditTime: 2023-08-16 16:47:14
  * @Description: 书籍
  * @FilePath: \spark-reader\src\router\modules\book.js
  */
@@ -35,29 +35,29 @@ const book = {
         ]
       },
       component: () => import('@/views/Book/BookList/index.vue')
+    },
+    {
+      path: '/BookDetail/:id',
+      label: '详情',
+      name: 'BookDetail',
+      menu: false,
+      meta: {
+        submenu: '/book',
+        crumb: [
+          {
+            path: '/book',
+            name: 'BookList',
+            label: '书单'
+          },
+          {
+            path: '/BookDetail',
+            name: 'BookDetail',
+            label: '详情'
+          }
+        ]
+      },
+      component: () => import('@/views/Book/BookDetail/index.vue')
     }
-    // {
-    //   path: '/algorithmDetail/:id',
-    //   label: '详情',
-    //   name: 'AlgorithmDetail',
-    //   menu: false,
-    //   meta: {
-    //     submenu: '/algorithm',
-    //     crumb: [
-    //       {
-    //         path: '/algorithm',
-    //         name: 'AlgorithmList',
-    //         label: '天赋材料'
-    //       },
-    //       {
-    //         path: '/AlgorithmDetail',
-    //         name: 'AlgorithmDetail',
-    //         label: '详情'
-    //       }
-    //     ]
-    //   },
-    //   component: () => import('@/views/Algorithm/AlgorithmDetail/index.vue')
-    // }
   ]
 }
 
