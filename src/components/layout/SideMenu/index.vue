@@ -2,8 +2,8 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 10:47:00
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-06-17 11:36:30
- * @Description: file co
+ * @LastEditTime: 2023-08-16 17:48:52
+ * @Description: 菜单栏框架-侧边栏
  * @FilePath: \spark-reader\src\components\layout\SideMenu\index.vue
 -->
 <template>
@@ -17,8 +17,8 @@
     <menuTree :menu="menuOptions" />
   </el-menu>
 </template>
-<script setup>
-import { onMounted, reactive, toRefs, watch } from 'vue'
+<script setup name="SideMenu">
+import { onMounted, reactive, toRefs, watch, getCurrentInstance } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import menuTree from './components/MenuTree.vue'
 // 用来获取 路由信息

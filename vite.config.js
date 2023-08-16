@@ -1,6 +1,16 @@
+/*
+ * @Author: tanshaobo
+ * @Date: 2023-06-08 15:34:10
+ * @LastEditors: tanshaobo
+ * @LastEditTime: 2023-08-16 17:48:28
+ * @Description: vite脚手架配置文件
+ * @FilePath: \spark-reader\vite.config.js
+ */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
+
 // 设置别名
 const resolve = {
   alias: [
@@ -48,7 +58,7 @@ export default defineConfig({
   server,
   css,
   build,
-  plugins: [vue()]
+  plugins: [vue(), vueSetupExtend()]
 })
 
 //

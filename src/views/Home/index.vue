@@ -2,9 +2,9 @@
  * @Author: tanshaobo
  * @Date: 2023-06-08 15:34:10
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-07-12 09:28:03
+ * @LastEditTime: 2023-08-16 17:49:23
  * @Description: 项目入口部分 布局为左右布局
- * @FilePath: \spark-reader\src\views\Home\Index.vue
+ * @FilePath: \spark-reader\src\views\Home\index.vue
 -->
 <template>
   <el-container>
@@ -23,7 +23,7 @@
   </el-container>
 </template>
 
-<script setup>
+<script setup name="Home">
 import SideMenu from '@/components/layout/SideMenu/index.vue'
 import Header from '@/components/layout/Header/index.vue'
 </script>
