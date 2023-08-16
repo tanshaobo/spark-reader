@@ -2,13 +2,13 @@
  * @Author: tanshaobo
  * @Date: 2022-02-09 13:13:51
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-06-17 11:17:11
+ * @LastEditTime: 2023-08-16 11:43:36
  * @Description: 书籍
  * @FilePath: \spark-reader\src\router\modules\book.js
  */
 import Home from '@/views/Home/index.vue'
 
-const algorithm = {
+const book = {
   path: '/book',
   label: '书籍',
   name: 'Book',
@@ -61,4 +61,4 @@ const algorithm = {
   ]
 }
 
-export default algorithm
+export default book

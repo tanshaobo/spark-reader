@@ -2,12 +2,12 @@
  * @Author: tanshaobo
  * @Date: 2022-01-27 15:51:23
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-06-17 11:08:59
- * @Description: 单一路由
+ * @LastEditTime: 2023-08-16 11:42:29
+ * @Description: 路由模块入口
  * @FilePath: \spark-reader\src\router\modules\index.js
  */
 
 import redirect from './redirect'
-import algorithm from './book'
+import book from './book'
 
-export default [redirect, algorithm]
+export default [redirect, book]
