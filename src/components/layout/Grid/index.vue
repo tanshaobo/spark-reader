@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 10:47:00
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-07-13 17:15:59
+ * @LastEditTime: 2023-08-17 09:30:55
  * @Description: 单元格
   本文件是宫格式布局文件，
   1，按设定的格子大小，每行固定n个格子。
@@ -29,7 +29,7 @@
     <div class="card-box" v-if="showType === 'table'"></div>
   </section>
 </template>
-<script setup>
+<script setup name="Grid">
 import { onMounted, onUnmounted, reactive, toRefs, ref, watch, nextTick } from 'vue'
 import handleSourceData from './Hooks/handleSourceData'
 

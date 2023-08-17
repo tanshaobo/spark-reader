@@ -20,7 +20,7 @@
   </section>
 </template>
 
-<script setup>
+<script setup name="Header">
 import { reactive, toRefs, computed } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 

@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-16 16:42:49
+ * @LastEditTime: 2023-08-17 11:39:27
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
@@ -16,7 +16,7 @@
   </Grid>
 </template>
 
-<script setup>
+<script setup name="BookList">
 import Grid from '@/components/layout/Grid/index.vue'
 import Row from '@/components/layout/Row/index.vue'
 import { dictionary, bookList } from '@/config/bookList'

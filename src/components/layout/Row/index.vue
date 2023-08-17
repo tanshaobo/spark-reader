@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 10:47:00
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-07-13 17:08:51
+ * @LastEditTime: 2023-08-17 09:31:31
  * @Description: grid布局中，单个grid内部布局方式
  * @FilePath: \spark-reader\src\components\layout\Row\index.vue
 -->
@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup name="Row">
 import { reactive, toRefs } from 'vue'
 
 const props = defineProps({
