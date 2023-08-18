@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-08 15:34:10
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-18 15:44:13
+ * @LastEditTime: 2023-08-18 16:10:09
  * @Description: vite脚手架配置文件
  * @FilePath: \spark-reader\vite.config.js
  */
@@ -50,15 +50,15 @@ const css = {
 }
 const build ={
   outDir:  'docs', // 打包输出目录
-  rollupOptions: {
-    output: {
-      manualChunks(id) {
-        if (id.includes('node_modules')) {
-          return id.toString().split('node_modules/')[1].split('/')[0].toString();
-        }
-      }
-    }
-  }
+  // rollupOptions: {
+  //   output: {
+  //     manualChunks(id) {
+  //       if (id.includes('node_modules')) {
+  //         return id.toString().split('node_modules/')[1].split('/')[0].toString();
+  //       }
+  //     }
+  //   }
+  // }
 }
 // https://vitejs.dev/config/
 export default defineConfig({
