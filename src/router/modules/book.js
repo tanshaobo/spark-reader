@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2022-02-09 13:13:51
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-18 15:07:44
+ * @LastEditTime: 2023-08-26 16:30:19
  * @Description: 书籍
  * @FilePath: \spark-reader\src\router\modules\book.js
  */
@@ -37,7 +37,7 @@ const book = {
       component: () => import('@/views/Book/BookList/index.vue')
     },
     {
-      path: '/BookDetail/:bookId',
+      path: '/BookDetail',
       label: '详情',
       name: 'BookDetail',
       menu: false,
@@ -59,7 +59,7 @@ const book = {
       component: () => import('@/views/Book/BookDetail/index.vue')
     },
     {
-      path: '/BookCatalogue/:bookId',
+      path: '/BookCatalogue',
       label: '详情',
       name: 'BookCatalogue',
       menu: false,
@@ -86,7 +86,7 @@ const book = {
       component: () => import('@/views/Book/BookCatalogue/index.vue')
     },
     {
-      path: '/BookContent/:bookId/:chapterId',
+      path: '/BookContent',
       label: '内容',
       name: 'BookContent',
       menu: false,
