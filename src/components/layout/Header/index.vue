@@ -1,3 +1,11 @@
+<!--
+ * @Author: tanshaobo
+ * @Date: 2023-06-17 10:47:00
+ * @LastEditors: tanshaobo
+ * @LastEditTime: 2023-09-07 17:08:44
+ * @Description: file content
+ * @FilePath: \spark-reader\src\components\layout\Header\index.vue
+-->
 <template>
   <section class="header">
     <el-breadcrumb>
@@ -6,7 +14,7 @@
           v-if="index != breadcrumbList.length"
           :to="{
             name: item.name,
-            params: item.params
+            state: item.params
           }"
           @click="goRoute(item)"
         >
@@ -27,8 +35,10 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
+console.log('route', route)
 const breadcrumbList = computed(() => {
-  const { meta, params } = route
+  const { meta } = route
+  const { params } = window.history.state
   let tempArr = []
   if (meta && meta.crumb) {
     tempArr = [...meta.crumb]
@@ -40,7 +50,7 @@ const breadcrumbList = computed(() => {
 const goRoute = (item) => {
   router.push({
     name: item.name,
-    params: {
+    state: {
       ...item.params
     }
   })

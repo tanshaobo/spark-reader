@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-26 16:54:44
+ * @LastEditTime: 2023-09-08 16:18:17
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
@@ -22,13 +22,14 @@ import Row from '@/components/layout/Row/index.vue'
 import { dictionary, bookList } from '@/config/bookList'
 
 import { reactive, toRefs } from 'vue'
-import { useRouter } from 'vue-router'
+import { useRouter, onBeforeRouteLeave } from 'vue-router'
 
 const router = useRouter()
 
 const state = reactive({
   dataList: [],
-  dataHeader: {}
+  dataHeader: {},
+  currentBook: {}
 })
 
 const Init = () => {
@@ -37,17 +38,27 @@ const Init = () => {
 }
 
 const enterIndexDetail = (item) => {
+  state.currentBook = item
   const params = {
     bookId: item.id,
     bookName: item.name
   }
   router.push({
     name: 'BookDetail',
-    state: {
-      params
-    }
+    // state: {
+    //   params
+    // },
+    params,
+    query: { ...params }
   })
 }
+
+onBeforeRouteLeave((to, _from) => {
+  to.meta.crumb = to.meta.crumb.map((item) => {
+    item.label = item.name === 'BookDetail' ? state.currentBook.name : item.label
+    return item
+  })
+})
 
 Init()
 

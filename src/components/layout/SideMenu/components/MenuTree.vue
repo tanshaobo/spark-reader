@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2022-11-18 10:00:38
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-17 11:36:02
+ * @LastEditTime: 2023-09-07 16:21:06
  * @Description: file content
  * @FilePath: \spark-reader\src\components\layout\SideMenu\components\MenuTree.vue
 -->
@@ -28,7 +28,7 @@
   </template>
 </template>
 
-<script setup name="menuTree">
+<script setup name="MenuTree">
 import { toRefs } from 'vue'
 
 const props = defineProps({
