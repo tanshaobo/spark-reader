@@ -13,28 +13,19 @@
 </template>
 
 <script setup name="BookDetail">
-import { useRoute, useRouter, onBeforeRouteLeave } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
-console.log('bookDetial route', route)
-const { params } = window.history.state
-console.log('bookDetail.params', params)
+const { query } = route
 const goCatalogue = () => {
   router.push({
     name: 'BookCatalogue',
     state: {
-      params
+      query
     }
   })
 }
-
-onBeforeRouteLeave((to, _from) => {
-  to.meta.crumb = to.meta.crumb.map((item) => {
-    item.label = item.name === 'BookDetail' ? params.bookName : item.label
-    return item
-  })
-})
 </script>
 
 <style lang="stylus" scoped></style>

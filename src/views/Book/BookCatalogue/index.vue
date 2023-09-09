@@ -17,7 +17,6 @@ import { useRoute, useRouter } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 const { params } = window.history.state
-console.log(route)
 const goContent = () => {
   params.chapterId = '1-1'
   router.push({
@@ -27,12 +26,9 @@ const goContent = () => {
     }
   })
 }
-// console.log(params.bookName)
 // const n = '/src/source/1/*.txt'
 // // const files = import.meta.glob(`/src/source/${params.bookName}/*.txt`)
 // const files = import.meta.glob(n)
-
-// console.log(files)
 </script>
 
 <style lang="stylus" scoped></style>

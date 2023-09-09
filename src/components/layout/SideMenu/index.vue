@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 10:47:00
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-07 17:20:58
+ * @LastEditTime: 2023-09-09 16:52:11
  * @Description: 菜单栏框架-侧边栏
  * @FilePath: \spark-reader\src\components\layout\SideMenu\index.vue
 -->
@@ -44,8 +44,6 @@ watch(
   route,
   (newVal, oldVal) => {
     const { matched } = newVal
-    console.log('newVal', newVal)
-    console.log('matched', matched)
     state.expandedActiveKey = matched
       .filter((item, index) => index < matched.length - 1 && index < 2)
       .map((item) => item.meta.subMenu)

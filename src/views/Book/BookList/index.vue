@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-08 16:18:17
+ * @LastEditTime: 2023-09-09 16:51:28
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
@@ -45,20 +45,9 @@ const enterIndexDetail = (item) => {
   }
   router.push({
     name: 'BookDetail',
-    // state: {
-    //   params
-    // },
-    params,
     query: { ...params }
   })
 }
-
-onBeforeRouteLeave((to, _from) => {
-  to.meta.crumb = to.meta.crumb.map((item) => {
-    item.label = item.name === 'BookDetail' ? state.currentBook.name : item.label
-    return item
-  })
-})
 
 Init()
 

@@ -35,7 +35,6 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-console.log('route', route)
 const breadcrumbList = computed(() => {
   const { meta } = route
   const { params } = window.history.state
