@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-08-16 16:45:08
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-08 16:12:12
+ * @LastEditTime: 2023-09-12 17:19:38
  * @Description: 书籍详情
  * @FilePath: \spark-reader\src\views\Book\BookDetail\index.vue
 -->
@@ -21,9 +21,7 @@ const { query } = route
 const goCatalogue = () => {
   router.push({
     name: 'BookCatalogue',
-    state: {
-      query
-    }
+    query
   })
 }
 </script>

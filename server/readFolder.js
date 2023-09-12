@@ -48,7 +48,7 @@ const f = (url, name) => {
 }
 
 bookList.forEach((item) => {
-  f(`src/source`, item.name)
+  f(`public/source`, item.name)
 })
 
 // f('src/source/')
