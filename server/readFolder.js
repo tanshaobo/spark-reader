@@ -43,12 +43,10 @@ const f = (url, name) => {
         name: item
       }
     })
-    createFile(`src/config/json/${name}.json`, JSON.stringify(data))
+    createFile(`public/json/${name}.json`, JSON.stringify(data))
   })
 }
 
 bookList.forEach((item) => {
   f(`public/source`, item.name)
 })
-
-// f('src/source/')
