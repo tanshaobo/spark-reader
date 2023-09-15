@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-09-12 19:47:54
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-13 10:07:36
+ * @LastEditTime: 2023-09-15 15:42:14
  * @Description: 通用接口
  * @FilePath: \spark-reader\src\http\common.js
  */
@@ -10,6 +10,9 @@
 import request from '@/utils/axios'
 
 const baseUrl = import.meta.env.DEV ? `` : `/spark-reader`
+// 获取书单
+export const getBookList = () => request.get(`${baseUrl}/json/bookList.json`)
+
 // 获取章节目录
 export const getCatalogueList = (params) => request.get(`${baseUrl}/json/${params.bookName}.json`)
 
