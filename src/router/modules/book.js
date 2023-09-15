@@ -2,11 +2,11 @@
  * @Author: tanshaobo
  * @Date: 2022-02-09 13:13:51
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-26 16:30:19
+ * @LastEditTime: 2023-09-15 11:09:37
  * @Description: 书籍
  * @FilePath: \spark-reader\src\router\modules\book.js
  */
-import Home from '@/views/Home/index.vue'
+import Home from '@/components/layout/Home/index.vue'
 
 const book = {
   path: '/book',
