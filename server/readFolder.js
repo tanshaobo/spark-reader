@@ -1,21 +1,5 @@
 const fs = require('fs')
 
-const jsonText = fs.readFileSync('src/config/bookList.js')
-
-let str = jsonText.toString()
-/**
- * 此处截取出书单的方式如下：
- * 1，通过split('bookList = ')[1] 截取 bookList数组起始定义的字符串（ 以=为准）
- * 2, 通过.replaceAll(/[\n|' ']/g, '')把字符串中空字符及换行符全部去掉
- * 3. 通过split('export')[0]和 split('const')[0] 截取下一个变量定义前的内容，即为字符串本身
- * 4. 通过match(/\[(\S*)\]/)[1]可直接截取数组中的所有项组成的字符串
- */
-const tempStr = str
-  .split('bookList = ')[1]
-  .replaceAll(/\s/g, '')
-  .split('export')[0]
-  .split('const')[0]
-
 const _eval = (str) => {
   const Fn = Function
   return new Fn(`return ${str}`)()
@@ -30,8 +14,27 @@ const createFile = (url, data) => {
   })
 }
 
-let bookList = _eval(tempStr)
-const f = (url, name) => {
+// 生成书单JSON
+const creatBookList = () => {
+  const data = fs.readdirSync(`public/source`).map((item, index) => ({
+    id: index + 1,
+    name: item
+  }))
+  createFile(`public/json/bookList.json`, JSON.stringify(data))
+}
+
+// 根据书单JSON生成
+const getBookList = () => {
+  fs.readFile('public/json/bookList.json', (err, data) => {
+    const bookList = _eval(data.toString())
+    bookList.forEach((item) => {
+      getCatalogueByBookName(`public/source`, item.name)
+    })
+  })
+}
+
+// 根据书名获取所有章节
+const getCatalogueByBookName = (url, name) => {
   let u = `${url}/${name}`
   fs.readdir(u, (err, files) => {
     if (err) {
@@ -47,6 +50,9 @@ const f = (url, name) => {
   })
 }
 
-bookList.forEach((item) => {
-  f(`public/source`, item.name)
-})
+const Init = () => {
+  creatBookList()
+  getBookList()
+}
+
+Init()
