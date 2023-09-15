@@ -1,0 +1,1 @@
+import{d as a,r,t as u,e as i,q as _,u as p,c as f,y as l}from"./index-39125155.js";import{b as m}from"./common-f34978b6.js";const d=a({name:"BookContent"}),b=Object.assign(d,{setup(C){const t=r({content:""}),n=l(),{query:o}=n,s=()=>{m(o).then(e=>{t.content=e})};(()=>{s()})();const{content:c}=u(t);return(e,k)=>(f(),i("div",null,_(p(c)),1))}});export{b as default};
