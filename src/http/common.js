@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-09-12 19:47:54
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-15 15:42:14
+ * @LastEditTime: 2023-09-20 17:22:14
  * @Description: 通用接口
  * @FilePath: \spark-reader\src\http\common.js
  */
@@ -18,4 +18,4 @@ export const getCatalogueList = (params) => request.get(`${baseUrl}/json/${param
 
 // 获取章节内容
 export const getContent = (params) =>
-  request.get(`${baseUrl}/source/${params.bookName}/${params.catalogueName}`)
+  request.get(`${baseUrl}/source/${params.bookName}/${params.url}`)

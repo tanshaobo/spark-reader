@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-09-09 10:45:02
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-20 11:11:56
+ * @LastEditTime: 2023-09-20 17:22:07
  * @Description: file content
  * @FilePath: \spark-reader\server\readFolder.js
  */
@@ -26,8 +26,8 @@ const Init = () => {
   creatBookList()
     .then((res) => {
       const data = res.map((item, index) => ({
-        id: index + 1,
-        name: item
+        id: `${index + 1}`,
+        bookName: item
       }))
       createFile(`public/json/bookList.json`, JSON.stringify(data))
     })
@@ -38,15 +38,16 @@ const Init = () => {
     .then((res) => {
       const bookList = _eval(res.toString())
       bookList.forEach((item) => {
-        getCatalogueByBookName(`public/source/${item.name}`)
+        getCatalogueByBookName(`public/source/${item.bookName}`)
           .then((res) => {
             const data = res.map((item, index) => {
               return {
                 id: `${index + 1}`,
-                name: item
+                catalogueName: item.split('.')[0],
+                url: item
               }
             })
-            createFile(`public/json/${item.name}.json`, JSON.stringify(data))
+            createFile(`public/json/${item.bookName}.json`, JSON.stringify(data))
           })
           .finally((err) => {
             console.log(err)

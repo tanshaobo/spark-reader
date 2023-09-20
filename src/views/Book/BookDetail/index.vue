@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-08-16 16:45:08
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-20 13:50:49
+ * @LastEditTime: 2023-09-20 16:51:53
  * @Description: 书籍详情
  * @FilePath: \spark-reader\src\views\Book\BookDetail\index.vue
 -->
@@ -16,11 +16,11 @@ import { useRoute, useRouter } from 'vue-router'
 
 const router = useRouter()
 const route = useRoute()
-const { query } = route
+const { params } = route
 const goCatalogue = () => {
   router.push({
     name: 'BookCatalogue',
-    query
+    params
   })
 }
 </script>

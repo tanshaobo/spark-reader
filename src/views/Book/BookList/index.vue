@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-20 14:03:29
+ * @LastEditTime: 2023-09-20 17:14:36
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
@@ -19,7 +19,7 @@
 <script setup name="BookList">
 import Grid from '@/components/layout/Grid/index.vue'
 import Row from '@/components/layout/Row/index.vue'
-import { dictionary } from '@/config/bookList'
+import dictionary from '@/config/bookList'
 
 import { reactive, toRefs } from 'vue'
 import { useRouter } from 'vue-router'
@@ -48,13 +48,11 @@ const Init = () => {
 
 const enterIndexDetail = (item) => {
   state.currentBook = item
-  const params = {
-    bookId: item.id,
-    bookName: item.name
-  }
   router.push({
     name: 'BookDetail',
-    query: { ...params }
+    params: {
+      bookId: item.id
+    }
   })
 }
 

@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-08-17 15:55:37
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-20 15:45:41
+ * @LastEditTime: 2023-09-20 17:19:27
  * @Description: 目录页
  * @FilePath: \spark-reader\src\views\Book\BookCatalogue\index.vue
 -->
@@ -10,7 +10,7 @@
   <Grid :data-list="catalogueList" class="grid" columnWidth="300px">
     <template #default="slotProps">
       <div @click="goContent(slotProps.item)">
-        {{ slotProps.item.name }}
+        {{ slotProps.item.catalogueName.split('.')[0] }}
       </div>
     </template>
   </Grid>
@@ -19,12 +19,12 @@
 <script setup name="BookCatalogue">
 import { reactive, toRefs } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { getCatalogueList } from '@/http/common'
+import { getBookList, getCatalogueList } from '@/http/common'
 import Grid from '@/components/layout/Grid/index.vue'
 
 const router = useRouter()
 const route = useRoute()
-const { query } = route
+const { params } = route
 const state = reactive({
   catalogueList: []
 })
@@ -32,18 +32,22 @@ const state = reactive({
 const goContent = (item) => {
   router.push({
     name: 'BookContent',
-    query: {
-      ...query,
-      catalogueId: item.id,
-      catalogueName: item.name
+    params: {
+      ...params,
+      catalogueId: item.id
     }
   })
 }
 
 const GetCatalogueList = () => {
-  getCatalogueList(query).then((res) => {
-    state.catalogueList = res
-  })
+  getBookList()
+    .then((res) => {
+      const param = res.find((item) => item.id === params.bookId)
+      return getCatalogueList(param)
+    })
+    .then((res) => {
+      state.catalogueList = res
+    })
 }
 
 const Init = () => {
