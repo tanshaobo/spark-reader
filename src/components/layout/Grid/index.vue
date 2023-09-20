@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 10:47:00
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-08-17 09:30:55
+ * @LastEditTime: 2023-09-20 14:02:41
  * @Description: 单元格
   本文件是宫格式布局文件，
   1，按设定的格子大小，每行固定n个格子。
@@ -15,7 +15,7 @@
   <section class="container" ref="box">
     <div class="card-box" v-if="showType === 'card'">
       <el-row v-for="(item, index) in showList" :key="index">
-        <div class="column-item" v-for="(i, j) in item" :key="j">
+        <div class="column-item" v-for="(i, j) in item" :key="j" :style="{ width: columnWidth }">
           <el-card v-if="!i.remain">
             <template v-if="hasHeader" #header>
               <slot :item="i" name="headers"></slot>
@@ -36,15 +36,23 @@ import handleSourceData from './Hooks/handleSourceData'
 const props = defineProps({
   showType: {
     type: String,
-    default: 'card'
+    default: 'card',
+    require: false
   },
   dataList: {
     type: Array,
-    default: () => []
+    default: () => [],
+    require: false
   },
   hasHeader: {
     type: Boolean,
-    default: false
+    default: false,
+    require: false
+  },
+  columnWidth: {
+    type: String,
+    default: '240px',
+    require: false
   }
 })
 const state = reactive({
@@ -76,7 +84,6 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('resize', computedLayout)
 })
-const { showType } = toRefs(props)
 const { column, dataList, showList } = toRefs(state)
 </script>
 <style lang="stylus" scoped>
@@ -89,7 +96,6 @@ const { column, dataList, showList } = toRefs(state)
       width 100%
       justify-content space-between
       .column-item
-        width 240px
         margin-bottom 20px
       .el-card
         cursor pointer

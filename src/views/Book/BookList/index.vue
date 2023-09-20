@@ -2,12 +2,12 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-15 17:24:04
+ * @LastEditTime: 2023-09-20 14:03:29
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
 <template>
-  <Grid :data-list="dataList" class="grid">
+  <Grid :data-list="dataList" class="grid" columnWidth="300px">
     <template #default="slotProps">
       <div @click="enterIndexDetail(slotProps.item)">
         <Row type="between" :label="dataHeader" :values="slotProps.item" />
