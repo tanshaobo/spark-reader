@@ -32,21 +32,6 @@ import { useRoute, useRouter } from 'vue-router'
 const route = useRoute()
 const router = useRouter()
 
-const state = reactive({
-  breadcrumbList: []
-})
-
-const setBreadcrumbList = () => {
-  const { meta, query } = route
-  let tempArr = []
-  if (meta && meta.crumb) {
-    tempArr = [...meta.crumb]
-  }
-  tempArr[tempArr.length - 1].query = query
-  console.log('route', route)
-  console.log('tempArr', tempArr)
-}
-setBreadcrumbList()
 const breadcrumbList = computed(() => {
   const { meta, query } = route
   let tempArr = []
