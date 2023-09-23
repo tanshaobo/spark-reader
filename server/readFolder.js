@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-09-09 10:45:02
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-20 17:22:07
+ * @LastEditTime: 2023-09-23 16:46:28
  * @Description: file content
  * @FilePath: \spark-reader\server\readFolder.js
  */
@@ -26,7 +26,7 @@ const Init = () => {
   creatBookList()
     .then((res) => {
       const data = res.map((item, index) => ({
-        id: `${index + 1}`,
+        bookId: `${index + 1}`,
         bookName: item
       }))
       createFile(`public/json/bookList.json`, JSON.stringify(data))
@@ -42,7 +42,7 @@ const Init = () => {
           .then((res) => {
             const data = res.map((item, index) => {
               return {
-                id: `${index + 1}`,
+                catalagueId: `${index + 1}`,
                 catalogueName: item.split('.')[0],
                 url: item
               }

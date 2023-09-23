@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-20 17:14:36
+ * @LastEditTime: 2023-09-23 16:48:14
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
@@ -22,15 +22,16 @@ import Row from '@/components/layout/Row/index.vue'
 import dictionary from '@/config/bookList'
 
 import { reactive, toRefs } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router'
 import { getBookList } from '@/http/common'
+import currentBook from '@/store/index'
 
 const router = useRouter()
 
 const state = reactive({
   dataList: [],
-  dataHeader: {},
-  currentBook: {}
+  dataHeader: {}
 })
 
 const GetBookList = () => {
@@ -46,8 +47,18 @@ const Init = () => {
   GetBookList()
 }
 
+const setCurrentBook = (item) => {
+  const store = currentBook()
+  const { bookId, bookName } = storeToRefs(store)
+  store.subCurrentBook({
+    bookId,
+    bookName,
+    ...item
+  })
+}
+
 const enterIndexDetail = (item) => {
-  state.currentBook = item
+  setCurrentBook(item)
   router.push({
     name: 'BookDetail',
     params: {
