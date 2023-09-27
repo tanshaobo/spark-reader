@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-06-17 11:05:34
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-23 16:48:14
+ * @LastEditTime: 2023-09-25 09:43:14
  * @Description: 书单页
  * @FilePath: \spark-reader\src\views\Book\BookList\index.vue
 -->
@@ -62,7 +62,7 @@ const enterIndexDetail = (item) => {
   router.push({
     name: 'BookDetail',
     params: {
-      bookId: item.id
+      bookId: item.bookId
     }
   })
 }

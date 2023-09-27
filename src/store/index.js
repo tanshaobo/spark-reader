@@ -14,8 +14,8 @@ const currentBook = defineStore({
     return {
       bookId: '',
       bookName: '',
-      catalagueId: '',
-      catalagueName: ''
+      catalogueId: '',
+      catalogueName: ''
     }
   },
   getters: {},
@@ -23,8 +23,8 @@ const currentBook = defineStore({
     subCurrentBook(option) {
       this.bookId = option.bookId
       this.bookName = option.bookName
-      this.catalagueId = option.catalagueId
-      this.catalagueName = option.catalagueName
+      this.catalogueId = option.catalogueId
+      this.catalogueName = option.catalogueName
     }
   }
 })
