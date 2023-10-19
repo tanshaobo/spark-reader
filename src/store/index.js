@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-09-23 16:05:35
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-23 16:49:05
+ * @LastEditTime: 2023-10-19 17:01:12
  * @Description: file content
  * @FilePath: \spark-reader\src\store\index.js
  */
@@ -15,7 +15,8 @@ const currentBook = defineStore({
       bookId: '',
       bookName: '',
       catalogueId: '',
-      catalogueName: ''
+      catalogueName: '',
+      catalogueUrl: ''
     }
   },
   getters: {},
@@ -25,6 +26,7 @@ const currentBook = defineStore({
       this.bookName = option.bookName
       this.catalogueId = option.catalogueId
       this.catalogueName = option.catalogueName
+      this.catalogueUrl = option.catalogueUrl
     }
   }
 })

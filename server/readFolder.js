@@ -2,7 +2,7 @@
  * @Author: tanshaobo
  * @Date: 2023-09-09 10:45:02
  * @LastEditors: tanshaobo
- * @LastEditTime: 2023-09-27 17:38:47
+ * @LastEditTime: 2023-10-19 16:58:53
  * @Description: file content
  * @FilePath: \spark-reader\server\readFolder.js
  */
@@ -44,7 +44,7 @@ const Init = () => {
               return {
                 catalogueId: `${index + 1}`,
                 catalogueName: item.split('.')[0],
-                url: item
+                catalogueUrl: item
               }
             })
             createFile(`public/json/${item.bookName}.json`, JSON.stringify(data))
