@@ -14,7 +14,7 @@ const baseUrl = import.meta.env.DEV ? `` : `/spark-reader`
 export const getBookList = () => request.get(`${baseUrl}/json/bookList.json`)
 
 // 获取章节目录
-export const getCatalogueList = (params) => request.get(`${baseUrl}/json/${params.bookName}.json`)
+export const getCatalogueList = (params) => request.get(`${baseUrl}/json/${params.bookId}.json`)
 
 // 获取章节内容
 export const getContent = (params) =>
